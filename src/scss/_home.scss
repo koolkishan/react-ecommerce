@@ -1,0 +1,98 @@
+.home {
+  background-color: var(--blue-background);
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .title-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--dark-blue);
+      }
+      .input-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        background-color: var(--background);
+        padding: 0.5rem;
+        color: var(--dark-blue);
+        width: 100%;
+        border-radius: 1rem;
+        input {
+          padding-left: 1rem;
+          border: none;
+          font-size: 1rem;
+          width: 70%;
+          background-color: var(--background);
+          color: var(--dark-blue);
+          &:focus {
+            outline: none;
+          }
+        }
+        .icon {
+          background-color: var(--ocean-blue);
+          padding: 0.3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          transition: var(--transition);
+          &:hover {
+            background-color: var(--dark-blue);
+          }
+          svg {
+            color: white;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+    .extra-image {
+      img {
+        max-inline-size: 100%;
+        block-size: auto;
+      }
+    }
+  }
+  @media only screen and (min-device-width: 768px) {
+    margin: 2rem;
+    border-radius: 1rem;
+    .container {
+      .title-container {
+        h2 {
+          font-size: 3.5rem;
+        }
+        .input-container {
+          width: 80%;
+        }
+      }
+    }
+  }
+  @media screen and (min-device-width: 1200px) {
+    margin: 0 5rem;
+    .container {
+      flex-direction: row;
+      gap: 1rem;
+      padding: 2rem 4rem;
+      .title-container {
+        align-items: flex-start;
+        h2 {
+          text-align: start;
+        }
+      }
+      .extra-image {
+        img {
+          height: 25rem;
+          max-inline-size: none;
+        }
+      }
+    }
+  }
+}

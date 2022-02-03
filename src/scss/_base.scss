@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;600;700;800&display=swap");
+
+:root {
+  --blue-background: #caf0f8;
+  --ocean-blue: #48cae4;
+  --dark-blue: #03045e;
+  --light-blue: #304a58;
+  --red: #f94144;
+  --blue: #0466c8;
+  --transition: 0.5s ease-in-out;
+  --fixed-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --elevate-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  --background: white;
+  --card-color: rgb(241, 240, 240);
+  --card-color2: white;
+  --svg-color: black;
+}
+
+[data-theme="dark"] {
+  --background: black;
+  --dark-blue: #8eecf5;
+  --light-blue: #4895ef;
+  --ocean-blue: #12131d;
+  --blue-background: #12131d;
+  --card-color: #12131d;
+  --card-color2: #12131d;
+  --red: #12131d;
+  --svg-color: #8eecf5;
+  --elevate-shadow: rgba(32, 29, 233, 0.637) 0px 25px 50px -12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.app {
+  background-color: var(--background);
+  transition: var(--transition);
+}
+
+html,
+body,
+.app {
+  overflow: visible;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.mx-3 {
+  margin: 0 1.5rem;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+::-webkit-scrollbar {
+  background-color: white;
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #48cae4;
+}
+
+@media only screen and (min-device-width: 280px) and (max-device-width: 1080px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media only screen and (min-device-width: 1200px) {
+  .mx-3 {
+    margin: 0 5rem;
+  }
+}

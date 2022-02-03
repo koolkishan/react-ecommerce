@@ -1,0 +1,122 @@
+nav {
+  background-color: var(--blue-background);
+  transition: var(--transition);
+
+  .py-3 {
+    padding: 2rem 0;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .brand {
+      display: flex;
+      gap: 0.3rem;
+      span {
+        font-size: 2rem;
+        color: var(--dark-blue);
+        font-weight: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .dot {
+        color: var(--ocean-blue);
+      }
+    }
+    .links-container {
+      .toggle {
+        display: flex;
+        gap: 1rem;
+        flex-direction: row-reverse;
+        position: relative;
+        z-index: 1;
+        .sun {
+          color: yellow;
+          font-size: 1.4rem;
+        }
+        .moon {
+          color: blue;
+          font-size: 1.4rem;
+        }
+        svg {
+          color: var(--svg-color);
+          font-size: 1.5rem;
+        }
+      }
+      .links {
+        width: 0vw;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 0;
+        background-color: var(--background);
+        visibility: hidden;
+        transition: var(--transition);
+        opacity: 0;
+        ul {
+          height: 100%;
+          list-style-type: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 4rem;
+          li {
+            a {
+              text-decoration: none;
+              text-transform: uppercase;
+              color: var(--light-blue);
+              font-weight: bold;
+            }
+            .sun {
+              color: yellow;
+              font-size: 1.4rem;
+            }
+            .moon {
+              color: blue;
+              font-size: 1.4rem;
+            }
+          }
+          .color-mode {
+            display: none;
+          }
+        }
+      }
+      .responsive-toggle {
+        width: 60vw;
+        right: 0vw;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  @media only screen and (min-device-width: 1200px) {
+    background-color: var(--background);
+    margin: 2rem;
+    margin-top: 0;
+    .py-3 {
+      padding: 1rem 0;
+    }
+    .container {
+      .links-container {
+        .toggle {
+          display: none;
+        }
+        .links {
+          position: initial;
+          height: max-content;
+          visibility: visible;
+          opacity: 1;
+          width: 100%;
+          ul {
+            height: 1rem;
+            flex-direction: row;
+            .color-mode {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

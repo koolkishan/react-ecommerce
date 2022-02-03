@@ -1,0 +1,97 @@
+.products-container {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    .title-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      h2 {
+        color: var(--dark-blue);
+      }
+      button {
+        padding: 0.8rem 2rem;
+        border-radius: 2rem;
+        background-color: var(--background);
+        color: var(--blue);
+        border: 0.1rem solid var(--blue);
+        font-weight: bolder;
+        transition: var(--transition);
+        &:hover {
+          background-color: var(--dark-blue);
+          color: var(--background);
+          border-color: var(--background);
+        }
+      }
+    }
+    .products {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      .product {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        background-color: var(--card-color2);
+        padding: 1rem;
+
+        border-radius: 1rem;
+        .image {
+          img {
+            max-inline-size: 100%;
+            block-size: auto;
+            height: 10rem;
+          }
+        }
+        h4 {
+          color: var(--dark-blue);
+        }
+        hr {
+          height: 0.2rem;
+          width: 80%;
+          background-color: var(--dark-blue);
+        }
+        .processor,
+        .os {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          justify-content: center;
+          align-items: center;
+          p {
+            color: var(--light-blue);
+          }
+        }
+        svg {
+          color: var(--ocean-blue);
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 768px) {
+    .container {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  @media screen and (min-device-width: 1200px) {
+    .container {
+      .title-container {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 5rem;
+      }
+      .products {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}

@@ -1,23 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Choose from "./components/Choose";
+import Home from "./components/Home";
+import "./scss/index.scss";
+import Services from "./components/Services";
+import Categories from "./components/Categories";
+import Recommend from "./components/Recommend";
+import Products from "./components/Products";
+import Promo from "./components/Promo";
+import ScrollTop from "./components/ScrollTop";
+import Footer from "./components/Footer";
+import scrollreveal from "scrollreveal";
 
 function App() {
+  const [theme, setTheme] = useState("dark");
+  const changeTheme = () => {
+    theme === "dark" ? setTheme("light") : setTheme("dark");
+  };
+  useEffect(() => {
+    const registerAnimations = () => {
+      const sr = scrollreveal({
+        origin: "bottom",
+        distance: "80px",
+        duration: 1000,
+        reset: false,
+      });
+      sr.reveal(
+        `
+        nav,
+        .home,
+        .services-container,
+        .categories-container,
+        .recommend-container,
+        .choose-us-container,
+        .products-container,
+        .promo-container,
+        footer
+    `,
+        {
+          interval: 500,
+        }
+      );
+    };
+    registerAnimations();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div data-theme={theme} className="app">
+      <ScrollTop />
+      <Navbar changeTheme={changeTheme} currentTheme={theme} />
+      <Home />
+      <Services />
+      <Categories />
+      <Recommend />
+      <Choose />
+      <Products />
+      <Promo />
+      <Footer />
     </div>
   );
 }
