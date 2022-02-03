@@ -1,5 +1,6 @@
 .home {
   background-color: var(--blue-background);
+  z-index: -1;
   .container {
     display: flex;
     flex-direction: column;

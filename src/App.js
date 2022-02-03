@@ -44,6 +44,10 @@ function App() {
     };
     registerAnimations();
   }, []);
+  window.setTimeout(() => {
+    const home = document.getElementsByClassName("home");
+    home[0].style.transform = "none";
+  }, 1500);
   return (
     <div data-theme={theme} className="app">
       <ScrollTop />
